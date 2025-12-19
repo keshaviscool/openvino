@@ -61,7 +61,7 @@ struct CPUStreamsExecutor::Impl {
                 }
             }
             _numaNodeId =
-                _impl->_config.get_streams()
+                (_impl->_config.get_streams() > 0)
                     ? _impl->_usedNumaNodes.at((_streamId % _impl->_config.get_streams()) /
                                                ((_impl->_config.get_streams() + _impl->_usedNumaNodes.size() - 1) /
                                                 _impl->_usedNumaNodes.size()))

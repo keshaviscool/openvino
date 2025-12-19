@@ -380,7 +380,8 @@ std::vector<std::vector<int>> get_streams_info_table(
                         return 1;
                     }
                     if (model_prefer_threads > n_threads) {
-                        return n_threads / 2;
+                        // return ( n_threads / 2);
+                        return std::max(1, n_threads / 2);
                     }
                     return model_prefer_threads;
                 }();
